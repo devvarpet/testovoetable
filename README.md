@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧩 Универсальный интерфейс управления сущностями
 
-## Getting Started
+Этот проект — интерфейс на **Next.js**, разработанный для отображения, фильтрации и редактирования различных типов сущностей с помощью **универсальных, переиспользуемых компонентов**.
 
-First, run the development server:
+> Вся логика — собственная. Без UI-библиотек таблиц. Легко расширяется под любые данные.
+
+## 🚀 Стек технологий
+
+- **Next.js (App Router)**
+- **React**
+- **TypeScript**
+- **TailwindCSS**
+- **Zustand**
+
+## 📦 Установка и запуск
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+Открой http://localhost:3000 для просмотра.
 ```
+📊 Универсальная таблица
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    Один компонент для всех типов сущностей
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    Отображение любых полей, включая вложенные
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    Поддержка сортировки, фильтрации и редактирования
 
-## Learn More
+    Поля и форматирование задаются через конфиг
 
-To learn more about Next.js, take a look at the following resources:
+🔍 Фильтрация
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    По строкам (включая вложенные поля: options.size)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    По boolean значениям (active)
 
-## Deploy on Vercel
+    По датам (createdAt, publishedAt)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    Все фильтры — модульные и легко добавляемые
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+✏️ Редактирование
+
+    Модальное окно редактирования
+
+    Показываются только доступные для изменения поля
+
+    Обновление данных происходит локально (без API)
+
+    Условия редактируемости определяются в конфиге
+
+📐 Архитектура
+
+    Компоненты не завязаны на конкретную структуру данных
+
+    Новая сущность добавляется через конфиг в entity-config-factory.tsx
+
+    Универсальные решения — без потери читаемости кода
+
+🧪 Опционально
+
+    Поддержка вложенного редактирования
+
+    Условная доступность полей (active: false → name не редактируется)
+
+    Оптимизация ререндеров через React.memo, useMemo, useCallback
