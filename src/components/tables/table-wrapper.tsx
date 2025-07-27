@@ -14,12 +14,9 @@ interface TableWrapperProps<
   keyExtractor: (item: T) => string | number;
 }
 
-export function TableWrapper<T extends Record<string, any>>({
-  data,
-  config,
-  onSave,
-  keyExtractor,
-}: TableWrapperProps<T>) {
+export function TableWrapper<
+  T extends Record<string, string | object | number>,
+>({ data, config, onSave, keyExtractor }: TableWrapperProps<T>) {
   const [editingItem, setEditingItem] = useState<T | null>(null);
   const [sortKey, setSortKey] = useState<string>("");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
