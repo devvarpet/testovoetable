@@ -5,18 +5,19 @@ import { EditModal } from "../modals/edit-modal";
 import { EntityConfig, FilterValues } from "@/lib/types";
 import { sortData, filterData } from "@/lib/utils";
 
-interface TableWrapperProps<
-  T extends Record<string, string | object | number>,
-> {
+interface TableWrapperProps<T extends Record<string, unknown>> {
   data: T[];
   config: EntityConfig<T>;
   onSave: (id: number, data: Partial<T>) => void;
   keyExtractor: (item: T) => string | number;
 }
 
-export function TableWrapper<
-  T extends Record<string, string | object | number>,
->({ data, config, onSave, keyExtractor }: TableWrapperProps<T>) {
+export function TableWrapper<T extends Record<string, unknown>>({
+  data,
+  config,
+  onSave,
+  keyExtractor,
+}: TableWrapperProps<T>) {
   const [editingItem, setEditingItem] = useState<T | null>(null);
   const [sortKey, setSortKey] = useState<string>("");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");

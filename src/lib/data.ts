@@ -1,4 +1,4 @@
-export interface Product {
+export interface Product extends Record<string, unknown> {
   id: number;
   name: string;
   options: {
@@ -9,7 +9,7 @@ export interface Product {
   createdAt: string;
 }
 
-export interface PricePlan {
+export interface PricePlan extends Record<string, unknown> {
   id: number;
   description: string;
   active: boolean;
@@ -17,7 +17,7 @@ export interface PricePlan {
   removedAt: string;
 }
 
-export interface Page {
+export interface Page extends Record<string, unknown> {
   id: number;
   title: string;
   active: boolean;
