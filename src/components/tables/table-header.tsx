@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import { ColumnConfig, SortDirection } from "@/lib/types";
 import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 

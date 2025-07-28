@@ -1,4 +1,3 @@
-import React, { useMemo } from "react";
 import {
   ColumnConfig,
   FilterConfig,
@@ -34,9 +33,6 @@ export function UniversalTable<T extends Record<string, unknown>>({
   filterValues,
   onFilterChange,
 }: UniversalTableProps<T>) {
-  const columnKeys = useMemo(() => columns.map((col) => col.key), [columns]);
-
-  const memoizedColumns = useMemo(() => columns, [columnKeys]);
   return (
     <div className="space-y-4">
       <TableFilters
@@ -49,7 +45,7 @@ export function UniversalTable<T extends Record<string, unknown>>({
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">
             <TableHeader
-              columns={memoizedColumns}
+              columns={columns}
               sortKey={sortKey}
               sortDirection={sortDirection}
               onSort={onSort}
@@ -59,7 +55,7 @@ export function UniversalTable<T extends Record<string, unknown>>({
                 <TableRow
                   key={keyExtractor(item)}
                   item={item}
-                  columns={memoizedColumns}
+                  columns={columns}
                   onEdit={onEdit}
                 />
               ))}

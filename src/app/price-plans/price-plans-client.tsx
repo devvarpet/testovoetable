@@ -3,10 +3,11 @@ import { EntityTable } from "@/components/tables/entity-table";
 import { createPricePlanConfig } from "@/lib/entity-config-factory";
 import { PricePlan } from "@/lib/data";
 import { useStore } from "@/lib/store";
+import { useMemo } from "react";
 
 export function PricePlansClient() {
   const { updatePricePlan } = useStore();
-  const config = createPricePlanConfig();
+  const config = useMemo(() => createPricePlanConfig(), []);
 
   return (
     <EntityTable<PricePlan>

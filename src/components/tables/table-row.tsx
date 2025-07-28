@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import { ColumnConfig } from "@/lib/types";
 import { PencilIcon } from "@heroicons/react/24/outline";
 

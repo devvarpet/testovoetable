@@ -3,10 +3,11 @@ import { EntityTable } from "@/components/tables/entity-table";
 import { createPageConfig } from "@/lib/entity-config-factory";
 import { Page } from "@/lib/data";
 import { useStore } from "@/lib/store";
+import { useMemo } from "react";
 
 export function PagesClient() {
   const { updatePage } = useStore();
-  const config = createPageConfig();
+  const config = useMemo(() => createPageConfig(), []);
 
   return (
     <EntityTable<Page>

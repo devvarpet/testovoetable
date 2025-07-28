@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { TableWrapper } from "@/components/tables/table-wrapper";
 import { useStore } from "@/lib/store";
 import { EntityConfig } from "@/lib/types";

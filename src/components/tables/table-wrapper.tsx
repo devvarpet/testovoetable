@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { UniversalTable } from "./universal-table";
 import { EditModal } from "../modals/edit-modal";
 import { EntityConfig, FilterValues } from "@/lib/types";

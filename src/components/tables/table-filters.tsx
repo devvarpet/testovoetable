@@ -1,4 +1,3 @@
-import React from "react";
 import { FilterConfig, FilterValues } from "@/lib/types";
 
 interface TableFiltersProps {
